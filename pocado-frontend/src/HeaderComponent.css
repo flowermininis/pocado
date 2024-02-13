@@ -1,0 +1,81 @@
+.header-tag {
+    width: 98vw;
+    height: 40px;
+    display: inline-flex;
+    /* display: flex; */
+    /*Making equal spaced divs*/
+    /* justify-content: space-between; */
+}
+
+.header-area {
+    background-color: rgb(255, 250, 242);
+    margin: auto;
+    position: relative;
+    padding: 15px;
+}
+
+.search-bar {
+    width: 90%;
+    height: 30px;
+    border-radius: 15px;
+    border-color: rgb(255, 190, 212);
+    border-style: solid;
+    padding-left: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .search-bar {
+        width: 70%;
+    }
+}
+
+.search-div {
+    width: 70vw;
+}
+
+.button-div {
+    width: 400px;
+    /* height: 40px;  */
+    display: flex;
+    /*Making equal spaced divs*/
+    /* justify-content: space-between; */
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: 0;
+
+}
+
+.header-buttons {
+    width: 65px;
+    height: 35px;
+    font-size: medium;
+    background-color: rgb(255, 250, 242);
+    border-style: none;
+    transition-duration: 0.4s;
+}
+
+.header-buttons:hover {
+    background-color: rgb(255, 244, 226);
+}
+
+.logo-div {
+    font-size: larger;
+    width: 100px;
+    padding-right: 30px;
+}
+
+.nav-buttons {
+    list-style: none;
+}
+
+#basket-icon {
+    height: 25px;
+    width: 25px;
+    filter: invert(84%) sepia(14%) saturate(1383%) hue-rotate(298deg) brightness(102%) contrast(117%);
+}
+
+#heart-icon {
+    height: 25px;
+    width: 25px;
+    filter: invert(84%) sepia(14%) saturate(1383%) hue-rotate(298deg) brightness(102%) contrast(117%);
+}

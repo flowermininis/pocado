@@ -1,20 +1,14 @@
 import { HeaderComponent } from "../components/HeaderComponent";
+import "./FavoritesPage.css";
 
 function FavoritesPage() {
   return (
     <html>
       <body>
         <HeaderComponent></HeaderComponent>
-        <div>
-          <h1>favorites page</h1>
-          <h1>favorites page</h1>
-          <h1>favorites page</h1>
+        <div id="fv-pg-bdy">
+          <h1 id="fv-hdr">Favorites</h1>
         </div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
       </body>
     </html>
   );

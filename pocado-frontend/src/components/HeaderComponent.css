@@ -14,6 +14,9 @@
     /* position: fixed; */
     padding: 15px;
     top: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: pink;
 }
 
 .search-bar {
@@ -111,9 +114,67 @@
     width: 125px;
 }
 
-.acc-btn {
+/* #acct-btn {
     padding-top: 3px;
+} */
+
+#acct-btn:hover,
+#acct-btn:focus {
+    background-color: rgb(255, 235, 243);
 }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 7px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 7px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(255, 235, 243);
+}
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    background: var(--secondary-bg);
+    transform: rotate(45deg);
+}
+
+.dropdown-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+}
+
+.dropdown-content.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed) ease;
+}
+
 
 /* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */
 @font-face {

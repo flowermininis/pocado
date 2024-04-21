@@ -1,0 +1,50 @@
+.pfp-choice-div {
+    /* border-radius: 50%; */
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    transition-duration: 0.4s;
+    /* background-image: url('../images/watermelon_cat_icon.jpg');
+    background-size: 100px 100px; */
+}
+
+#pfp-choice-1 {
+    background-image: url('../images/blue_cat_icon.jpg');
+    background-size: 100px 100px;
+}
+
+#pfp-choice-2 {
+    background-image: url('../images/neopolitan_cat_icon.jpg');
+    background-size: 100px 100px;
+}
+
+#pfp-choice-3 {
+    background-image: url('../images/strawberry_roll_cat_icon.jpg');
+    background-size: 100px 100px;
+}
+
+#pfp-choice-4 {
+    background-image: url('../images/toast_cat_icon.jpg');
+    background-size: 100px 100px;
+}
+
+#pfp-choice-5 {
+    background-image: url('../images/watermelon_cat_icon.jpg');
+    background-size: 100px 100px;
+}
+
+.pfp-choice-div:focus {
+    border-color: deeppink;
+}
+
+
+
+#pfp-choice-sect {
+    display: flex;
+}

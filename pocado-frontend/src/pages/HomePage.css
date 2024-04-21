@@ -1,0 +1,39 @@
+/* *,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: calibri;
+} */
+
+#slides-cont {
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    border-radius: 7px;
+}
+
+swiper-container {
+    width: 90vw;
+    height: 400px;
+    text-align: center;
+    border-radius: 7px;
+
+}
+
+swiper-slide {
+    background-color: rgb(4 47 46);
+    color: #fff;
+    font-size: 25px;
+    height: 100%;
+    width: 100%;
+    border-radius: 7px;
+}
+
+swiper-slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}

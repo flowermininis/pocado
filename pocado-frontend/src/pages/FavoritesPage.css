@@ -1,6 +1,9 @@
-#fv-hdr {
+body {
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+}
+
+#fv-hdr {
+    /* font-weight: 500; */
     padding-left: 20px;
 }
 

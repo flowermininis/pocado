@@ -18,6 +18,14 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a password!"],
     },
+
+    pfp: String,
+    birthday: String,
+    bio: String,
+    city: String,
+    country: String,
+    following: Number,
+    followers: Number,
   },
   {
     timestamps: true,

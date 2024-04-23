@@ -1,14 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import HeaderComponent from "../components/HeaderComponent";
-import prof_pfp from "../images/strawberry_roll_cat_icon.jpg";
+import "./PublicUserProfile.css";
 import axios from "axios";
 
 function PublicUserProfile() {
-  //   const { user } = useSelector((state) => state.auth);
   const { id } = useParams();
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState({});
 
   const API_URL = "http://localhost:5000/api/users/user/";
 
@@ -16,35 +14,53 @@ function PublicUserProfile() {
     axios
       .get(API_URL + id)
       .then(
-        (response) => (setUserInfo(response.data), console.log(response.data))
-      );
+        (response) => setUserInfo(response.data)
+        // console.log("response.data: " + response.data),
+        // console.log("userInfo: " + userInfo),
+        // console.log("userInfo.pfp: " + userInfo.pfp)
+      )
+      .catch((error) => console.error(error));
   }, []);
 
   return (
-    <body>
+    <body className="pbl-user-prof-body">
       <HeaderComponent></HeaderComponent>
-      <div>
-        <div className="usr-profile-body">
-          <div>
-            <h2>{userInfo.username}'s profile</h2>
+      <div className="pbl-profile-body">
+        <div>
+          <h2>{userInfo.username}'s profile</h2>
+        </div>
+        <div className="pbl-profile-info-div">
+          <div id="pfp-cell">
+            {/* do this whenever u need to render something but its value is always intially undefined */}
+            {userInfo.pfp && (
+              <img src={require("../images/" + userInfo.pfp)} id="pfp-ex"></img>
+            )}
           </div>
-          <div className="prf-inf-div">
-            <div id="pfp-cell">
-              <img src={prof_pfp} id="pfp-ex"></img>
+          <div id="pbl-un-cell">
+            <div id="pbl-idk-un-n-bday">
+              <h3 id="pbl-un-h3">{userInfo.username}</h3>
+              <p id="pbl-bsd-un">
+                {userInfo.city}, {userInfo.country}
+              </p>
             </div>
-            <div id="un-n-fl">
-              <h3 id="un-h3">{userInfo.username}</h3>
-              <br></br>
-              <p>0 following 0 followers</p>
-            </div>
-            <div id="btns">
-              <a href="/account-settings">
-                <button id="fllw-btn">Follow</button>
-              </a>
-            </div>
+            <br></br>
+            Birthday: {userInfo.birthday}
+            <br></br>
+            {userInfo.following} following {userInfo.followers} followers
+          </div>
+          <div id="pbl-dos-cell">
+            <button type="button" className="fllw-button">
+              Follow
+            </button>
           </div>
         </div>
-        {/* <button>hi</button> */}
+        <div id="my-bio-div">
+          <h3>My Bio</h3>
+          <p>{userInfo.bio}</p>
+        </div>
+        <div id="my-bio-div">
+          <h3>My Lisitngs</h3>
+        </div>
       </div>
     </body>
   );

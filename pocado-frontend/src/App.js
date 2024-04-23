@@ -12,10 +12,11 @@ import UserProfile from "./pages/UserProfile";
 import UserEdit from "./pages/UserEdit";
 import NewListing from "./pages/NewListing";
 import PublicUserProfile from "./pages/PublicUserProfile";
+import ListingDetails from "./pages/ListingDetails";
 
 function App() {
   return (
-    <div>
+    <div id="app-div">
       <BrowserRouter>
         <Routes>
           <Route element={<HomePage />} path="/"></Route>
@@ -25,8 +26,9 @@ function App() {
           <Route element={<BasketPage />} path="/basket"></Route>
           <Route element={<UserProfile />} path="/my-account"></Route>
           <Route element={<UserEdit />} path="/edit-profile"></Route>
-          <Route element={<NewListing />} path="/new-listing"></Route>
+          <Route element={<NewListing />} exact path="/new-listing"></Route>
           <Route element={<PublicUserProfile />} path="/user/:id"></Route>
+          <Route element={<ListingDetails />} path="/listings/:id"></Route>
         </Routes>
       </BrowserRouter>
       <ToastContainer />

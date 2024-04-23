@@ -102,7 +102,7 @@ function HeaderComponent() {
                   </div>
                 </div>
                 <li className="nav-buttons acc-btn">
-                  <a href="new-listing">
+                  <a href="/new-listing">
                     <button className="header-buttons acc-btn">Sell</button>
                   </a>
                 </li>

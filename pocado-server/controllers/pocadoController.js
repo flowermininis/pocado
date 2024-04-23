@@ -1,58 +1,39 @@
 const asyncHandler = require("express-async-handler");
 const Listings = require("../models/listingModel");
 const User = require("../models/userModel");
-const Profile = require("../models/profileModel");
 
 /**
- * @description Gets a user
- * @route GET api/users/user
- * @access Public
- */
-const getProfileById = asyncHandler(async (req, res) => {
-  const sngl_prof = await Profile.findById(req.params.user.id);
-
-  res.status(200).json(sngl_prof);
-});
-
-/**
- * @description Gets a user
- * @route GET api/users/user
- * @access Public
- */
-const createProfile = asyncHandler(async (req, res) => {
-  // const sngl_prof = await Profile.findById(req.params.user.id);
-
-  const profile = await Profile.create({
-    user: req.user.id,
-    username: req.user.username,
-    pfp: req.body.pfp,
-    birthday: req.body.birthday,
-    bio: req.body.bio,
-    city: req.body.city,
-    country: req.body.country,
-    following: req.body.following,
-    followers: req.body.followers,
-  });
-
-  res.status(200).json(profile);
-});
-
-/**
- * @description Gets a listing
+ * @description Gets a listing by a user
  * @route GET api/listings
- * @access Public
+ * @access Private
  */
 const getListings = asyncHandler(async (req, res) => {
-  const listings = await Profiles.find({ user: req.user.id });
+  const listings = await Listings.find({ user: req.user.id });
 
   res.status(200).json(listings);
 });
 
-// const getListings = asyncHandler(async (req, res) => {
-//   const listings = await Listings.find();
+/**
+ * @description Gets a listing by its id
+ * @route GET api/listings/:id
+ * @access Public
+ */
+const getListingById = asyncHandler(async (req, res) => {
+  const listings = await Listings.findById(req.params.id);
 
-//   res.status(200).json(listings);
-// });
+  res.status(200).json(listings);
+});
+
+/**
+ * @description Gets a listing by its id
+ * @route GET api/listings/:id
+ * @access Public
+ */
+const getListingByUserId = asyncHandler(async (req, res) => {
+  const listings = await Listings.findById(req.params.user.id);
+
+  res.status(200).json(listings);
+});
 
 // /**
 //  * @description Gets a listing by a
@@ -77,14 +58,17 @@ const getListings = asyncHandler(async (req, res) => {
  * @access Private
  */
 const postListing = asyncHandler(async (req, res) => {
-  // console.log(req.body);
+  // console.log("starting postListing...");
   if (!req.body.title) {
     res.status(400);
-    throw new Error("Please add a test");
+    throw new Error("Please add a title");
   }
+
+  // console.log("hello! adding listing to database..");
 
   const listing = await Listings.create({
     user: req.user.id,
+    image: req.body.image,
     title: req.body.title,
     price: req.body.price,
     stock: req.body.stock,
@@ -95,6 +79,8 @@ const postListing = asyncHandler(async (req, res) => {
     description: req.body.description,
     favorites: req.body.favorites,
   });
+
+  console.log("listing made, here it is: " + listing);
 
   res.status(200).json(listing);
 });
@@ -124,9 +110,13 @@ const editListing = asyncHandler(async (req, res) => {
     throw new Error("User not authorized!");
   }
 
-  const updatedListing = await findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  const updatedListing = await Listings.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    }
+  );
 
   res.status(200).json(updatedListing);
 });
@@ -162,10 +152,9 @@ const deleteListing = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  getProfileById,
-  postProfile,
   getListings,
-  // getUserListings,
+  getListingById,
+  getListingByUserId,
   postListing,
   editListing,
   deleteListing,

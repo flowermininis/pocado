@@ -1,0 +1,105 @@
+.pbl-user-prof-class {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.pbl-profile-body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding-left: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    justify-content: center;
+    width: 100vh;
+}
+
+.pbl-profile-body #un-cell {
+    display: flex;
+    justify-content: center;
+}
+
+.pbl-profile-info-div {
+    display: grid;
+    grid-template-columns: 150px 700px 30%;
+    grid-auto-rows: minmax(50px, auto);
+}
+
+#pbl-un-cell {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-left: 10px;
+    flex-shrink: 0;
+    top: 0px;
+    left: 0px;
+    /* background-color: palegoldenrod; */
+    margin-left: 20px;
+}
+
+#pbl-dos-cell {
+    grid-column: 3;
+    grid-row: 1;
+    padding-left: 10px;
+    /* background-color: aquamarine; */
+    display: flex;
+}
+
+.fllw-button {
+    width: 150px;
+    margin: 5px;
+    height: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgb(254, 231, 238);
+    transition-duration: 0.4s;
+}
+
+.fllw-button:hover {
+    background-color: rgb(255, 191, 211);
+}
+
+#pbl-idk-un-n-bday {
+    display: flex;
+}
+
+#pbl-un-h3,
+#pbl-bsd-un {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+#pbl-bsd-un {
+    padding-top: 5px;
+}
+
+/* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */

@@ -1,6 +1,10 @@
-body {
+#list-form-body {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 h-tag {
@@ -73,6 +77,18 @@ h-tag {
     background-color: rgb(255, 72, 136);
     border-color: rgb(255, 72, 136);
     border-style: solid;
+}
+
+#frm-sbm-btn:active {
+    position: relative;
+    top: 1px;
+}
+
+
+#nl-file-btn {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+
 }
 
 /* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */

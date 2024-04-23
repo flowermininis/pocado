@@ -1,4 +1,4 @@
-body {
+.user-prof-class {
     font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
@@ -30,6 +30,9 @@ body {
 #pfp-ex {
     border-radius: 50%;
     height: 150px;
+    border-color: rgb(255, 211, 230);
+    border-style: solid;
+    border-width: 3px;
 }
 
 #pfp-cell {
@@ -57,7 +60,7 @@ body {
     display: flex;
 }
 
-#prof-button {
+.prof-button {
     width: 150px;
     margin: 5px;
     height: 35px;
@@ -69,8 +72,24 @@ body {
     transition-duration: 0.4s;
 }
 
-#prof-button:hover {
-    background-color: rgb(255, 213, 226);
+.prof-button:hover {
+    background-color: rgb(255, 191, 211);
+}
+
+#idk-un-n-bday {
+    display: flex;
+}
+
+#username-h3,
+#bsd-un {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+#bsd-un {
+    padding-top: 5px;
 }
 
 /* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */

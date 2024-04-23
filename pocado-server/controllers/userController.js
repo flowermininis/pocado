@@ -6,7 +6,7 @@ const Profile = require("../models/profileModel");
 
 /**
  * @description Gets a user
- * @route GET api/users/user
+ * @route GET api/users/user/:id
  * @access Public
  */
 const getUserById = asyncHandler(async (req, res) => {
@@ -16,7 +16,34 @@ const getUserById = asyncHandler(async (req, res) => {
     id: sngl_user.id,
     username: sngl_user.username,
     email: sngl_user.email,
+    pfp: sngl_user.pfp,
+    birthday: sngl_user.birthday,
+    bio: sngl_user.bio,
+    city: sngl_user.city,
+    country: sngl_user.country,
+    following: sngl_user.following,
+    followers: sngl_user.followers,
   });
+});
+
+/**
+ * @description Updates a user object
+ * @route PATCH api/users/user/:id
+ * @access Public
+ */
+const editUserProfile = asyncHandler(async (req, res) => {
+  const sngl_user = await User.findById(req.params.id);
+
+  if (!sngl_user) {
+    res.status(400);
+    throw new Error("User not found :(");
+  }
+
+  const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+
+  res.status(200).json(updatedUser);
 });
 
 /**
@@ -49,6 +76,13 @@ const registerUser = asyncHandler(async (req, res) => {
     username,
     email,
     password: hashedPw,
+    pfp: "",
+    birthday: "",
+    bio: "",
+    city: "",
+    country: "United States",
+    following: 0,
+    followers: 0,
   });
 
   if (user) {
@@ -56,6 +90,13 @@ const registerUser = asyncHandler(async (req, res) => {
       _id: user.id,
       username: user.username,
       email: user.email,
+      pfp: user.pfp,
+      birthday: user.birthday,
+      bio: user.bio,
+      city: user.city,
+      country: user.country,
+      following: user.following,
+      followers: user.followers,
       token: generateToken(user._id),
     });
   } else {
@@ -79,6 +120,13 @@ const loginUser = asyncHandler(async (req, res) => {
       _id: user.id,
       username: user.username,
       email: user.email,
+      pfp: user.pfp,
+      birthday: user.birthday,
+      bio: user.bio,
+      city: user.city,
+      country: user.country,
+      following: user.following,
+      followers: user.followers,
       token: generateToken(user._id),
     });
   } else {
@@ -108,4 +156,5 @@ module.exports = {
   registerUser,
   loginUser,
   getUserCreds,
+  editUserProfile,
 };

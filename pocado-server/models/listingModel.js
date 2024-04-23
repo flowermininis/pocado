@@ -1,6 +1,7 @@
 const { Decimal128 } = require("mongodb");
 const mongoose = require("mongoose");
 
+// add value to denote if the item is sold or not
 const listingSchema = mongoose.Schema(
   {
     user: {
@@ -8,10 +9,10 @@ const listingSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
-    // image: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "Image",
-    // },
+    image: {
+      type: String,
+      ref: "Image",
+    },
     title: {
       type: String,
       required: [true, "Please give your listing a title!"],

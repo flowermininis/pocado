@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const {
   getListings,
-  getProfileById,
+  getListingById,
+  getListingByUserId,
   postListing,
   editListing,
   deleteListing,
@@ -14,16 +15,14 @@ router.route("/").get(protect, getListings).post(protect, postListing);
 
 // uses the '/:id' route for delete and put requests,
 // where id is the object id for the database entry
-router.route("/:id").delete(protect, deleteListing).put(protect, editListing);
+router
+  .route("/:id")
+  .get(getListingById)
+  .delete(protect, deleteListing)
+  .put(protect, editListing);
 
-router.get("/profile/:id", getProfileById);
-
-// router.get("/", getListings);
-
-// router.post("/", postListing);
-
-// router.put("/:id", editListing);
-
-// router.delete("/:id", deleteListing);
+// uses the '/user-listings/:id' route to get
+// listings based on a user's id
+router.route("/user-listings/:id", getListingByUserId);
 
 module.exports = router;

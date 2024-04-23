@@ -47,6 +47,7 @@ function NewListing() {
     if (imageFile) {
       console.log("inside imageFile...");
       let data = new FormData();
+      data.append("uuid", image);
       data.append("image", imageFile);
       console.log(data);
       axios
@@ -72,7 +73,7 @@ function NewListing() {
       if (e.target.files.length > 0) {
         setListingData((prevState) => ({
           ...prevState,
-          image: e.target.files[0].name,
+          image: uuidv4() + "." + e.target.files[0].name.split(".")[1],
           // console.log("rhis worked")
         }));
         setImageFile(e.target.files[0]);

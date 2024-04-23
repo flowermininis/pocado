@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Image = require("../models/imageModel");
 
 const getImage = asyncHandler(async (req, res) => {
-  const image = await Image.find({ name: req.params.id });
+  const image = await Image.find({ uuid: req.params.id });
 
   res.status(200).json(image);
 });

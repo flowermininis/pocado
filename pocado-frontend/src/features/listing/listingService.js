@@ -11,7 +11,7 @@ const createListing = async (listingData, token) => {
   };
 
   const response = await axios.post(API_URL, listingData, config);
-  console.log("response data: " + response.data);
+  // console.log("response data: " + response.data);
   return response.data;
 };
 

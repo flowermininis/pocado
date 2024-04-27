@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import listings_hollow_heart from "../images/listings_hollow_heart.jpg";
 import HeaderComponent from "../components/HeaderComponent";
 import "./PublicUserProfile.css";
 import axios from "axios";
@@ -7,7 +10,14 @@ import axios from "axios";
 function PublicUserProfile() {
   const { id } = useParams();
   const [userInfo, setUserInfo] = useState({});
+  const [userListings, setUserListings] = useState([]);
+  const [imgLinks, setImgLinks] = useState({ imgArr: [] });
+  const [lstImg, setLstImg] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const LISTING_API_URL = "http://localhost:5000/api/listings/user/";
+  const IMAGES_API_URL = "http://localhost:5000/api/upload/";
   const API_URL = "http://localhost:5000/api/users/user/";
 
   useEffect(() => {
@@ -20,7 +30,38 @@ function PublicUserProfile() {
         // console.log("userInfo.pfp: " + userInfo.pfp)
       )
       .catch((error) => console.error(error));
+
+    axios
+      .get(LISTING_API_URL + id)
+      .then(
+        (response) => {
+          setUserListings(response.data);
+          // console.log("response.data: " + response.data);
+        }
+        // console.log("userInfo: " + userInfo),
+        // console.log("userInfo.pfp: " + userInfo.pfp)
+      )
+      .catch((error) => console.error(error));
+
+    // console.log("before map....");
+    // userListings.map((listing) => {
+    //   console.log("inside map before set....");
+    //   setLstImg(listing.image);
+    //   // if (lstImg) {
+    //   axios.get(IMAGES_API_URL + lstImg).then((response) => {
+    //     console.log(response);
+    //     setImgLinks((prevState) =>
+    //       // console.log(prevState)
+    //       ({
+    //         imgArr: [...prevState.imgArr, response.data[0].name],
+    //       })
+    //     );
+    //   });
+    //   // }
+    // });
   }, []);
+
+  console.log(imgLinks.imgArr);
 
   return (
     <body className="pbl-user-prof-body">
@@ -55,11 +96,35 @@ function PublicUserProfile() {
           </div>
         </div>
         <div id="my-bio-div">
-          <h3>My Bio</h3>
+          <h2>My Bio</h2>
           <p>{userInfo.bio}</p>
         </div>
         <div id="my-bio-div">
-          <h3>My Lisitngs</h3>
+          {/* <h3>My Lisitngs</h3> */}
+          <div id="pup-my-listings-div">
+            <h2>My Lisitngs</h2>
+            {userListings.length > 0 ? (
+              <div className="pup-listings-map-item">
+                {userListings.map((listing) => (
+                  <a id="pup-listi-a" href={"/listings/" + listing._id}>
+                    <div className="pup-listing-item" key={listing._id}>
+                      <img
+                        id="pup-listing-img"
+                        src={listings_hollow_heart}
+                      ></img>
+                      <div id="pup-list-crd-inf">
+                        <p>{listing.title}</p>
+                        <p>${listing.price}</p>
+                      </div>
+                      {/* <p>{listing.image}</p> */}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <h3>You have no listings!</h3>
+            )}
+          </div>
         </div>
       </div>
     </body>

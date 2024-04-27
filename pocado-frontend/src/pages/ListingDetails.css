@@ -1,0 +1,308 @@
+#listing-image-div {
+    /* height: 450px;
+    width: 600px; */
+    margin-right: 50px;
+}
+
+#image-namee {
+    height: 550px;
+    width: 550px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+#listing-details-div {
+    font-family: 'Poppins', sans-serif;
+}
+
+#listing-bod-div {
+    display: flex;
+    justify-content: center;
+    /* margin-left: 100px; */
+    margin-top: 60px;
+    /* justify-content: space-between; */
+}
+
+#listing-info {
+    margin-top: -30px;
+}
+
+/* #listing-bod-div {
+    height: 400px;
+} */
+
+
+#title-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#price-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: -15px;
+}
+
+#num-in-stock {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: -15px;
+}
+
+#add-to-cart-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    width: 90%;
+    height: 50px;
+    border-style: none;
+    background-color: rgb(255, 225, 238);
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+#add-to-cart-btn:hover {
+    background-color: rgb(255, 198, 221);
+}
+
+#buy-now-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    width: 90%;
+    height: 50px;
+    border-style: none;
+    background-color: rgb(255, 187, 215);
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    margin-top: 20px;
+}
+
+#buy-now-btn:hover {
+    background-color: rgb(255, 158, 197);
+}
+
+.buy-btn:active {
+    position: relative;
+    top: 3px;
+}
+
+.listing-href {
+    color: rgb(236, 35, 116);
+    text-decoration: none;
+}
+
+.listing-href:active {
+    color: rgb(236, 35, 116);
+}
+
+#buy-buttons {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: rgb(255, 237, 245);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    /* margin: auto; */
+}
+
+
+#details-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+#desc-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+#shipp-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+.list-p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+#uploader-user-div {
+    display: flex;
+    /* justify-content: center; */
+}
+
+#lstn-usr-upldr {
+    border-radius: 50%;
+    height: 100px;
+    border-color: rgb(255, 211, 230);
+    border-style: solid;
+    border-width: 3px;
+}
+
+#uploader-user-div {
+    margin-top: 20px;
+}
+
+#un-stuff-div {
+    margin-left: 20px;
+}
+
+#un-p {
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+#lctn-p {
+    margin-top: 45px;
+}
+
+#lstn-fllw-div {
+    margin-left: 135px;
+}
+
+#lstn-usr-fllw-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    height: 40px;
+    background-color: rgb(255, 225, 238);
+    border-style: none;
+    border-radius: 5px;
+    width: 100px;
+    transition-duration: 0.4s;
+}
+
+#lstn-usr-fllw-btn:hover {
+    background-color: rgb(255, 198, 221);
+}
+
+#lstn-usr-fllw-btn:active {
+    position: relative;
+    top: 3px;
+}
+
+#un-link {
+    color: black;
+    text-decoration: none;
+}
+
+#un-link:active {
+    color: black;
+}
+
+/* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */

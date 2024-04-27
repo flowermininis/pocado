@@ -50,6 +50,7 @@
     left: 0px;
     /* background-color: palegoldenrod; */
     margin-left: 20px;
+    margin-right: 50px;
 }
 
 #dos-cell {
@@ -58,6 +59,7 @@
     padding-left: 10px;
     /* background-color: aquamarine; */
     display: flex;
+    margin-left: 200px;
 }
 
 .prof-button {
@@ -86,11 +88,87 @@
     vertical-align: bottom;
     margin-right: 10px;
     margin-bottom: 20px;
+    margin-top: -10px;
 }
 
 #bsd-un {
     padding-top: 5px;
 }
+
+#listing-img {
+    height: 160px;
+    width: 160px;
+    margin: auto;
+}
+
+.listings-map-item {
+    /* float: left; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.listing-item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    transition: box-shadow .3s;
+    width: 200px;
+    height: 320px;
+    border-radius: 10px;
+    border: 1px solid #ffa0ce;
+    background: #fff;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* text-align: ; */
+}
+
+.listing-item button {
+    width: 150px;
+    height: 40px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 7px;
+    border-style: none;
+    background-color: rgb(255, 187, 187);
+    transition-duration: 0.4s;
+}
+
+.listing-item button:hover {
+    background-color: rgb(255, 106, 106);
+}
+
+.listing-item p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#my-listings-div {
+    width: 95vw;
+}
+
+#list-crd-inf {
+    padding-left: 10px;
+}
+
+.listing-item:hover {
+    box-shadow: 0 0 15px rgba(255, 4, 104, 0.2);
+    transform: translate3d(0px, -3px, 0px);
+}
+
+#listi-a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    display: flex;
+    padding: none;
+}
+
 
 /* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */
 

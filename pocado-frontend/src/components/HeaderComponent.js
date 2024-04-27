@@ -54,9 +54,9 @@ function HeaderComponent() {
             className="search-bar"
             placeholder="what can we help you with?"
           ></input>
-          {/* <button className="search-button">
-            <img className="" src={magnifying_glass_solid} />
-          </button> */}
+          <button className="header-buttons hdr-ico">
+            <img className="hdr-ico-svg" src={magnifying_glass_solid} />
+          </button>
         </div>
         <div id="buttons">
           <ul className="button-div">
@@ -103,7 +103,9 @@ function HeaderComponent() {
                 </div>
                 <li className="nav-buttons acc-btn">
                   <a href="/new-listing">
-                    <button className="header-buttons acc-btn">Sell</button>
+                    <button id="sell-btn" className="header-buttons acc-btn">
+                      Sell
+                    </button>
                   </a>
                 </li>
               </>

@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const Listings = require("../models/listingModel");
 const User = require("../models/userModel");
+const Image = require("../models/imageModel");
 
 /**
  * @description Gets a listing by a user
@@ -30,7 +31,7 @@ const getListingById = asyncHandler(async (req, res) => {
  * @access Public
  */
 const getListingByUserId = asyncHandler(async (req, res) => {
-  const listings = await Listings.findById(req.params.user.id);
+  const listings = await Listings.find({ user: req.params.id });
 
   res.status(200).json(listings);
 });
@@ -64,8 +65,6 @@ const postListing = asyncHandler(async (req, res) => {
     throw new Error("Please add a title");
   }
 
-  // console.log("hello! adding listing to database..");
-
   const listing = await Listings.create({
     user: req.user.id,
     image: req.body.image,
@@ -75,12 +74,22 @@ const postListing = asyncHandler(async (req, res) => {
     num_sold: req.body.num_sold,
     rating: req.body.rating,
     category: req.body.category,
+    condition: req.body.condition,
+    shipping: req.body.shipping,
+    ships_from: req.body.ships_from,
     group: req.body.group,
     description: req.body.description,
     favorites: req.body.favorites,
   });
 
+  // const newImage = await Image.find({ uuid: req.body.image });
+  // console.log("newImage: " + newImage);
+
+  // const newListingId = await Listings.findById(listing.id);
+  // console.log("newListingId: " + newListingId.id);
+
   console.log("listing made, here it is: " + listing);
+  // console.log("newImage: " + newImage);
 
   res.status(200).json(listing);
 });

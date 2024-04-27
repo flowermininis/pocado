@@ -23,6 +23,6 @@ router
 
 // uses the '/user-listings/:id' route to get
 // listings based on a user's id
-router.route("/user-listings/:id", getListingByUserId);
+router.get("/user/:id", getListingByUserId);
 
 module.exports = router;

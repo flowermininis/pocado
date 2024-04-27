@@ -17,11 +17,14 @@ const listingSchema = mongoose.Schema(
       type: String,
       required: [true, "Please give your listing a title!"],
     },
-    price: Decimal128,
+    price: String,
     stock: Number,
     num_sold: Number,
-    rating: Decimal128,
+    rating: String,
     category: String,
+    condition: String,
+    shipping: String,
+    ships_from: String,
     group: String,
     description: String,
     favorites: Number,
@@ -30,5 +33,7 @@ const listingSchema = mongoose.Schema(
     timestamps: true,
   }
 );
+
+listingSchema.index({ title: "text" });
 
 module.exports = mongoose.model("Listings", listingSchema);

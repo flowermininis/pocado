@@ -27,6 +27,11 @@
     border-style: solid;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 5px;
+}
+
+#sell-btn {
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -37,6 +42,7 @@
 
 .search-div {
     width: 65%;
+    display: flex;
 }
 
 .button-div {
@@ -122,7 +128,6 @@
 #acct-btn:focus {
     background-color: rgb(255, 235, 243);
 }
-
 
 .dropdown {
     position: relative;

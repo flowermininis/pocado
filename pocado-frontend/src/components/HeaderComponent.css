@@ -20,7 +20,7 @@
 }
 
 .search-bar {
-    width: 80%;
+    width: 70%;
     height: 35px;
     border-radius: 15px;
     border-color: #ffa1c0;
@@ -28,6 +28,12 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 5px;
+    background-image: url('../icons/magnifying_glass_solid.svg');
+    background-image: pink;
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    padding: 12px 12px 12px 32px;
+    background-size: 15px;
 }
 
 #sell-btn {
@@ -78,6 +84,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border-radius: 10px;
+
 }
 
 .hdr-ico {
@@ -103,6 +110,20 @@
     /* padding-right: 30px; */
     /* margin: auto; */
 }
+
+/* 
+#srch-btn {
+    width: 75x;
+    height: 35px;
+    transition-duration: 0.4;
+    background-color: white;
+}
+
+#srch-btn:hover {
+    transition-duration: 0.4;
+    background-color: rgb(255, 235, 243);
+    
+} */
 
 .nav-buttons {
     list-style: none;

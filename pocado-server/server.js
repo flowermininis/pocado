@@ -22,6 +22,7 @@ app.use(
 app.use("/api/listings", require("./routes/pocadoRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/upload", require("./routes/uploadRoutes"));
+app.use("/api/search", require("./routes/searchRoutes"));
 
 app.use(errorHandler);
 

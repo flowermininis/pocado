@@ -129,7 +129,7 @@ function UserProfile() {
                       </div>
                     </>
                   ))}
-                  <div>{listingItems && <p>{listingItems.imgArr[1]}</p>}</div>
+                  {/* <div>{listingItems && <p>{listingItems.imgArr[1]}</p>}</div> */}
                 </div>
               ) : (
                 <h3>You have no listings!</h3>

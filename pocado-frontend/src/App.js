@@ -13,6 +13,7 @@ import UserEdit from "./pages/UserEdit";
 import NewListing from "./pages/NewListing";
 import PublicUserProfile from "./pages/PublicUserProfile";
 import ListingDetails from "./pages/ListingDetails";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route element={<NewListing />} exact path="/new-listing"></Route>
           <Route element={<PublicUserProfile />} path="/user/:id"></Route>
           <Route element={<ListingDetails />} path="/listings/:id"></Route>
+          <Route element={<SearchResults />} path="/search/"></Route>
         </Routes>
       </BrowserRouter>
       <ToastContainer />

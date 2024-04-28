@@ -5,12 +5,14 @@ import heart_solid from "../icons/heart_solid.svg";
 import logo_test from "../logos/logo_test.png";
 import user_solid from "../icons/user_solid.svg";
 import magnifying_glass_solid from "../icons/magnifying_glass_solid.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import { useState, useEffect, useRef } from "react";
 
 function HeaderComponent() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -24,6 +26,17 @@ function HeaderComponent() {
   const [open, setOpen] = useState(false);
 
   let menuRef = useRef();
+
+  const searchSubmit = (e) => {
+    e.preventDefault();
+    setSearchParams({ q: searchQuery });
+
+    navigate("/search?q=" + encodeURIComponent(searchQuery));
+  };
+
+  const searchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   useEffect(() => {
     let handler = (e) => {
@@ -48,16 +61,26 @@ function HeaderComponent() {
             <img id="logo-png-header" src={logo_test} />
           </a>
         </div>
-        <div className="search-div">
+        <form onSubmit={searchSubmit} className="search-div">
           <input
             type="search"
             className="search-bar"
             placeholder="what can we help you with?"
+            value={searchQuery}
+            onChange={searchChange}
+            name="q"
           ></input>
-          <button className="header-buttons hdr-ico">
+          {/* <a href="/search"> */}
+          <button
+            type="submit"
+            id="srch-btn"
+            className="header-buttons hdr-ico"
+          >
             <img className="hdr-ico-svg" src={magnifying_glass_solid} />
           </button>
-        </div>
+          {/* </a> */}
+          <div></div>
+        </form>
         <div id="buttons">
           <ul className="button-div">
             {user ? (

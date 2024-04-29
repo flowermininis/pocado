@@ -29,11 +29,12 @@
     padding-right: 10px;
     margin-top: 5px;
     background-image: url('../icons/magnifying_glass_solid.svg');
-    background-image: pink;
+    /* background-image: pink; */
     background-position: 10px 8px;
     background-repeat: no-repeat;
     padding: 12px 12px 12px 32px;
     background-size: 15px;
+    font-family: 'Poppins', sans-serif;
 }
 
 #sell-btn {

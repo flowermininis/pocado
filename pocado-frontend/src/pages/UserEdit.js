@@ -1,4 +1,5 @@
 import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
 import "./UserEdit.css";
 import { useSelector } from "react-redux";
 import { useContext, useState, useEffect } from "react";
@@ -298,6 +299,7 @@ function UserEdit() {
           </div>
         )}
       </div>
+      <FooterComponent></FooterComponent>
     </body>
   );
 }

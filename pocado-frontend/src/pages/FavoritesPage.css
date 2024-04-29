@@ -2,8 +2,13 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+#fv-pg-bdy {
+    height: 100vh;
+}
+
 #fv-hdr {
     /* font-weight: 500; */
+    font-family: 'Poppins', sans-serif;
     padding-left: 20px;
 }
 

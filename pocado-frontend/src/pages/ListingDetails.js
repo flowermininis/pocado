@@ -1,8 +1,9 @@
+import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ListingDetails.css";
-import HeaderComponent from "../components/HeaderComponent";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
@@ -152,6 +153,7 @@ function ListingDetails() {
           </div>
         </div>
       </div>
+      <FooterComponent></FooterComponent>
     </body>
   );
 }

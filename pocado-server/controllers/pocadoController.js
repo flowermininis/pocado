@@ -36,23 +36,6 @@ const getListingByUserId = asyncHandler(async (req, res) => {
   res.status(200).json(listings);
 });
 
-// /**
-//  * @description Gets a listing by a
-//  * @route GET api/listings
-//  * @access Public
-//  */
-// const getUserListings = asyncHandler(async (req, res) => {
-//   const listings = await Listings.find().populate("user", "username");
-
-//   if (!listings) {
-//     res
-//       .status(400)
-//       .json({ message: `${req.params.user.username} has no listings :(` });
-//   }
-
-//   res.status(200).json(listings);
-// });
-
 /**
  * @description Adds a listing
  * @route POST api/listings

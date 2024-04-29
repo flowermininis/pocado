@@ -1,5 +1,6 @@
 import "./NewListing.css";
 import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
 import { useContext, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createListing } from "../features/listing/listingSlice";
@@ -179,7 +180,7 @@ function NewListing() {
             value={condition}
             onChange={onChange}
             className="nl-sl-box"
-            name="category"
+            name="condition"
           >
             <option selected disabled value="">
               Choose condition
@@ -313,6 +314,7 @@ function NewListing() {
           <input type="submit" id="frm-sbm-btn"></input>
         </form>
       </div>
+      <FooterComponent></FooterComponent>
     </body>
   );
 }

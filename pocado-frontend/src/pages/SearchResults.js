@@ -1,5 +1,6 @@
 import "./SearchResults.css";
 import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import listings_hollow_heart from "../images/listings_hollow_heart.jpg";
@@ -40,39 +41,42 @@ function SearchResults() {
   console.log(searchParams);
   console.log(listings);
   return (
-    <body className="search-rslt-body">
-      <HeaderComponent></HeaderComponent>
-      <div id="search-results-div">
-        {listings.length > 0 ? (
-          <>
-            <h1 className="num-rslt-h">
-              {listings.length} results found for "{search}"
-            </h1>
-            <div className="srch-listings-map-item">
-              {listings.map((listing) => (
-                <div className="srch-listing-item" key={listing._id}>
-                  <a id="srch-listi-a" href={"/listings/" + listing._id}>
-                    <img
-                      id="srch-listing-img"
-                      src={listings_hollow_heart}
-                    ></img>
-                  </a>
-                  <div id="srch-list-crd-inf">
-                    <a id="inf-a" href={"/listings/" + listing._id}>
-                      <p>{listing.title}</p>
-                      <p>${listing.price}</p>
+    <body>
+      <div className="search-rslt-body">
+        <HeaderComponent></HeaderComponent>
+        <div id="search-results-div">
+          {listings.length > 0 ? (
+            <>
+              <h1 className="num-rslt-h">
+                {listings.length} results found for "{search}"
+              </h1>
+              <div className="srch-listings-map-item">
+                {listings.map((listing) => (
+                  <div className="srch-listing-item" key={listing._id}>
+                    <a id="srch-listi-a" href={"/listings/" + listing._id}>
+                      <img
+                        id="srch-listing-img"
+                        src={listings_hollow_heart}
+                      ></img>
                     </a>
+                    <div id="srch-list-crd-inf">
+                      <a id="inf-a" href={"/listings/" + listing._id}>
+                        <p>{listing.title}</p>
+                        <p>${listing.price}</p>
+                      </a>
+                    </div>
+                    {/* <button type="button">delete</button> */}
                   </div>
-                  {/* <button type="button">delete</button> */}
-                </div>
-              ))}
-            </div>
-          </>
-        ) : (
-          <h1 className="num-rslt-h">No results found for "{search}"</h1>
-        )}
+                ))}
+              </div>
+            </>
+          ) : (
+            <h1 className="num-rslt-h">No results found for "{search}"</h1>
+          )}
+        </div>
+        {/* <div>hello</div> */}
       </div>
-      {/* <div>hello</div> */}
+      <FooterComponent></FooterComponent>
     </body>
   );
 }

@@ -1,75 +1,10 @@
-#home-body {
-    font-family: 'Poppins', sans-serif;
+.cat-listings-div {
+    margin-left: 20px;
 }
 
-#home-h-div {
-    display: flex;
-    justify-content: center;
-}
-
-#home-body h1 {
+.cat-listings-div h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-}
-
-#slides-cont {
-    display: flex;
-    justify-content: center;
-    height: 430px;
-    border-radius: 7px;
-}
-
-swiper-container {
-    width: 90vw;
-    height: 400px;
-    text-align: center;
-    border-radius: 7px;
-
-}
-
-swiper-slide {
-    background-color: rgb(4 47 46);
-    color: #fff;
-    font-size: 25px;
-    height: 100%;
-    width: 100%;
-    border-radius: 7px;
-}
-
-swiper-slide img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 7px;
-}
-
-.home-cat-btn {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: medium;
-    margin: 10px;
-    height: 50px;
-    width: 200px;
-    background-color: white;
-    border-color: #ffa1c0;
-    border-style: solid;
-    border-radius: 7px;
-    transition-duration: 0.4s;
-}
-
-.home-cat-btn:hover {
-    background-color: #ffe7ef;
-    border-color: #ffe7ef;
-}
-
-.home-cat-btn:active {
-    position: relative;
-    top: 3px;
-}
-
-#cat-btns-div div {
-    display: flex;
-    justify-content: center;
 }
 
 /* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */
@@ -176,7 +111,7 @@ swiper-slide img {
     font-family: 'Poppins';
     src: url('../../public/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
     font-weight: 800;
-    font-style: italic;
+    font-style: normal;
 }
 
 /* ------- THIS SECTION CONTAINS FONT-FACES FOR IMPORTTED FONTS! ------- */

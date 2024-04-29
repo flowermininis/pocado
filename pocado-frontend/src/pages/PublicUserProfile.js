@@ -1,9 +1,10 @@
+import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import listings_hollow_heart from "../images/listings_hollow_heart.jpg";
-import HeaderComponent from "../components/HeaderComponent";
 import "./PublicUserProfile.css";
 import axios from "axios";
 
@@ -122,11 +123,12 @@ function PublicUserProfile() {
                 ))}
               </div>
             ) : (
-              <h3>You have no listings!</h3>
+              <h3>No listings found! {":("}</h3>
             )}
           </div>
         </div>
       </div>
+      <FooterComponent></FooterComponent>
     </body>
   );
 }

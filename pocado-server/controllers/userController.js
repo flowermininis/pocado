@@ -76,7 +76,7 @@ const registerUser = asyncHandler(async (req, res) => {
     username,
     email,
     password: hashedPw,
-    pfp: "",
+    pfp: "strawberry_roll_cat_icon.jpg",
     birthday: "",
     bio: "",
     city: "",

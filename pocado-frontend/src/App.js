@@ -14,6 +14,11 @@ import NewListing from "./pages/NewListing";
 import PublicUserProfile from "./pages/PublicUserProfile";
 import ListingDetails from "./pages/ListingDetails";
 import SearchResults from "./pages/SearchResults";
+import PhotocardListings from "./pages/PhotocardListings";
+import HolderListings from "./pages/HolderListings";
+import SleeveListings from "./pages/SleeveListings";
+import BinderColbukListings from "./pages/BinderColbukListings";
+import ToploaderListings from "./pages/ToploaderListings";
 
 function App() {
   return (
@@ -31,6 +36,26 @@ function App() {
           <Route element={<PublicUserProfile />} path="/user/:id"></Route>
           <Route element={<ListingDetails />} path="/listings/:id"></Route>
           <Route element={<SearchResults />} path="/search/"></Route>
+          <Route
+            element={<PhotocardListings />}
+            path="/categories/photocards"
+          ></Route>
+          <Route
+            element={<HolderListings />}
+            path="/categories/photocard-holders"
+          ></Route>
+          <Route
+            element={<SleeveListings />}
+            path="/categories/photocard-sleeves"
+          ></Route>
+          <Route
+            element={<BinderColbukListings />}
+            path="/categories/binders-collect-books"
+          ></Route>
+          <Route
+            element={<ToploaderListings />}
+            path="/categories/toploaders"
+          ></Route>
         </Routes>
       </BrowserRouter>
       <ToastContainer />

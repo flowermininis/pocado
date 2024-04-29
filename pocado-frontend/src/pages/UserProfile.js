@@ -1,5 +1,6 @@
 import "./UserProfile.css";
 import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -109,7 +110,7 @@ function UserProfile() {
               <p>{user.bio}</p>
             </div>
             <div id="my-listings-div">
-              <h2>My Lisitngs</h2>
+              <h2>My Listings</h2>
               {listings.length > 0 ? (
                 <div className="listings-map-item">
                   {listings.map((listing) => (
@@ -142,6 +143,7 @@ function UserProfile() {
           </div>
         )}
       </div>
+      <FooterComponent></FooterComponent>
     </body>
   );
 }

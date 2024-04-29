@@ -1,0 +1,31 @@
+#footer-div {
+    height: 150px;
+    /* width: 99vw; */
+    background-color: black;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#footer-div p {
+    color: rgb(255, 224, 236);
+}
+
+#footer-div a {
+    text-decoration: none;
+    color: rgb(255, 160, 197);
+}
+
+#footer-div a:hover {
+    text-decoration: none;
+    color: rgb(255, 133, 180);
+}
+
+#footer-div div {
+    margin: auto;
+}
+
+.hhhhh-dv {
+    display: flex;
+    justify-content: center;
+}

@@ -97,7 +97,7 @@ const editListing = asyncHandler(async (req, res) => {
     throw new Error("User not found!");
   }
 
-  if (global.user.toString() !== req.user.id) {
+  if (listing.user.toString() == req.user.id) {
     res.status(401);
     throw new Error("User not authorized!");
   }
@@ -135,10 +135,12 @@ const deleteListing = asyncHandler(async (req, res) => {
     throw new Error("User not found!");
   }
 
-  if (global.user.toString() !== req.user.id) {
+  if (listing.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized!");
   }
+
+  await Listings.deleteOne(listing);
 
   res.status(200).json({ id: req.params.id });
 });

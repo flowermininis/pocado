@@ -5,7 +5,11 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getListings, reset } from "../features/listing/listingSlice";
+import {
+  getListings,
+  deleteListing,
+  reset,
+} from "../features/listing/listingSlice";
 import listings_hollow_heart from "../images/listings_hollow_heart.jpg";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
@@ -126,7 +130,12 @@ function UserProfile() {
                           <p>{listing.title}</p>
                           <p>${listing.price}</p>
                         </div>
-                        <button type="button">delete</button>
+                        <button
+                          type="button"
+                          onClick={() => dispatch(deleteListing(listing._id))}
+                        >
+                          delete
+                        </button>
                       </div>
                     </>
                   ))}
